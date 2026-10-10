@@ -1,0 +1,21 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets.json
+credentials.json
+
+# dependencies
+node_modules/
+
+# editor / OS noise
+.claude
+.idea
+.DS_Store
+
+# logs and temp files
+*.log
+*.tmp

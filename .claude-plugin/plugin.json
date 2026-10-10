@@ -1,0 +1,25 @@
+{
+  "name": "harness-engineering-skills",
+  "version": "1.0.0",
+  "description": "Diagnose and rebuild the harness around your coding agent — instruction files, skills, rules, state, feedback loops, and environment lock-in.",
+  "author": {
+    "name": "9Ashwin",
+    "url": "https://github.com/9Ashwin"
+  },
+  "homepage": "https://github.com/9Ashwin/harness-engineering",
+  "repository": "https://github.com/9Ashwin/harness-engineering",
+  "license": "MIT",
+  "keywords": [
+    "harness",
+    "harness-engineering",
+    "agents-md",
+    "skills",
+    "context-engineering",
+    "steering-loop",
+    "feedback",
+    "state-management"
+  ],
+  "skills": [
+    "./skills/harness-engineering"
+  ]
+}
