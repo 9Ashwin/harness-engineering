@@ -9,7 +9,7 @@
     {
       "name": "harness-engineering-skills",
       "source": "./",
-      "description": "Triage checklist → 14 diagnosed failure modes → 8 prescription groups: a maintenance-oriented playbook for AGENTS.md, SKILL.md, rules, state, checkpoints and environment lock-in.",
+      "description": "Triage checklist → 14 diagnosed failure modes → 11 prescription groups: a maintenance-oriented playbook for AGENTS.md, SKILL.md, rules, state, checkpoints and environment lock-in.",
       "category": "engineering",
       "keywords": [
         "harness",

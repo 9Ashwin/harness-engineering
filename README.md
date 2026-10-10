@@ -5,7 +5,7 @@ English | [简体中文](./README_CN.md)
 **Stop re-pasting the same prompt.** This skill diagnoses why your coding agent's output is inconsistent, then rebuilds the harness around it — instruction files, skills, rules, state, feedback loops and environment lock-in.
 
 ```
-triage (20-point checklist)  →  diagnose (14 failure modes)  →  prescribe (8 playbook groups)  →  re-check
+triage (20-point checklist)  →  diagnose (14 failure modes)  →  prescribe (11 playbook groups)  →  re-check
 ```
 
 <p align="center">
@@ -51,7 +51,7 @@ The core idea: **a harness is the steering loop around the agent.** It decides w
 
 ## What it covers
 
-The skill ships a triage checklist, 14 failure modes with prescriptions, and 8 prescription groups.
+The skill ships a triage checklist, 14 failure modes with prescriptions, and 11 prescription groups.
 
 ### Diagnosis — 14 failure modes
 
@@ -72,7 +72,7 @@ The skill ships a triage checklist, 14 failure modes with prescriptions, and 8 p
 | 13 | Pattern copy drift | New code mirrors the legacy pattern you are trying to retire | **Pattern baseline** — reference example, failing architecture checks, violation baseline |
 | 14 | Skill trigger drift & bloat | The right skill does not fire; two skills compete; the skill keeps growing | **Description = when to use**, four-part completeness, structure before line count |
 
-### Prescription — 8 playbook groups
+### Prescription — 11 playbook groups
 
 | Group | What it builds |
 |---|---|
@@ -84,12 +84,15 @@ The skill ships a triage checklist, 14 failure modes with prescriptions, and 8 p
 | Environment locking | Deterministic bootstrap, pinned dependencies and third-party skills, an indirect layer for external services |
 | Grading feedback | Silent on success; blocking / warning / info, with the responsibility split made explicit |
 | Examples before conventions | A positive reference, failing checks, a violation baseline, continuous cleanup |
+| Repository as spec | The repository is the single source of truth: everything the agent needs lives in files, laid out agent-first |
+| Least intervention | Automate the predictable checks; humans adjudicate and escalate instead of scanning every round |
+| Knowledge solidification | Whatever the conversation proves out is written back into instructions, state, tools and environment |
 
 ## How to use it
 
 1. **Triage.** Run the 20-item checklist in [`SKILL.md` §3](skills/harness-engineering/SKILL.md). It is machine-checkable on purpose: the goal is to turn "the agent feels off" into "item 11 does not hold in this repo". Note which items fail.
 2. **Diagnose.** Take the failing items to [`references/diagnoses.md`](skills/harness-engineering/references/diagnoses.md). Each entry has the same five parts: symptom / cause / indicators / prescription / common misdiagnosis. Fix the one or two most painful items, not everything at once.
-3. **Prescribe.** The general construction patterns are in [`references/playbook.md`](skills/harness-engineering/references/playbook.md), arranged in 8 groups with before → after shape comparisons.
+3. **Prescribe.** The general construction patterns are in [`references/playbook.md`](skills/harness-engineering/references/playbook.md), arranged in 11 groups with before → after shape comparisons.
 4. **Re-check.** Go back to step 1. Confirm you did not introduce a new smell — for example, adding a check script for false victory and triggering feedback overload instead.
 
 ## Design notes
@@ -105,7 +108,7 @@ A third, quieter constraint: **fix one or two things per pass.** Almost every fa
 
 The skill is designed to grow by increments rather than rewrites. The full convention lives in [`references/course-map.md`](skills/harness-engineering/references/course-map.md); the short version:
 
-1. **Trigger** — a new lecture, a revision to an existing one, or a new claim from a Q&A or retrospective.
+1. **Trigger** — a new lecture, a revision to an existing one, or a new claim from the live session or a Q&A.
 2. **Classify** — is it a new diagnosis, a new prescription, or a rewrite of an existing claim?
 3. **Place** — diagnoses go to `references/diagnoses.md` (keeping the fixed five-part form); prescriptions go to `references/playbook.md` (into the nearest group, or a new group with its boundary stated). Update the mapping table in `references/course-map.md`.
 4. **Re-link** — update the indexes in `SKILL.md` §3/§4/§5. Indexes must stay machine-resolvable: names and paths greppable, links clickable.
@@ -129,13 +132,13 @@ Discipline: add, don't reorder. Existing entry numbers are identity, never reuse
         ├── SKILL.md              # the trunk: how to use it, what to check, where to go next
         └── references/
             ├── diagnoses.md      # 14 failure modes: symptom / cause / indicators / prescription / misdiagnosis
-            ├── playbook.md       # 8 prescription groups with before → after shapes
-            └── course-map.md     # topic ↔ section mapping, and the increment convention
+            ├── playbook.md       # 11 prescription groups with before → after shapes
+            └── course-map.md     # lecture ↔ section mapping, and the increment convention
 ```
 
 ## Provenance & attribution
 
-The methodology in this repository is a distillation of an internal methodology course on harness engineering. Lecture numbers such as "07 讲" appear as provenance tags only — they let a maintainer trace a claim back to its source, and nothing depends on them. No course text is reproduced: the prose is a rewrite, and the examples and code blocks are original or abstracted. This repository contains no project-private data (order numbers, tokens, user IDs, internal addresses); all examples are abstract.
+The methodology in this repository is a distillation of an internal methodology course on harness engineering. Lecture numbers such as "07 讲" appear as provenance tags only — they let a maintainer trace a claim back to its source, and nothing depends on them. No course text is reproduced wholesale: the prose quotes briefly with lecture tags and is otherwise a rewrite, and the examples and code blocks are original or abstracted. This repository contains no project-private data (order numbers, tokens, user IDs, internal addresses); all examples are abstract.
 
 ## License
 

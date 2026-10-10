@@ -61,7 +61,7 @@
 
   <rect x="393" y="262" width="155" height="54" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
   <text x="470.5" y="284" font-size="12" text-anchor="middle" fill="#1e40af">3. Prescribe</text>
-  <text x="470.5" y="302" font-size="10" text-anchor="middle" fill="#1e40af">8 playbook groups</text>
+  <text x="470.5" y="302" font-size="10" text-anchor="middle" fill="#1e40af">11 playbook groups</text>
 
   <rect x="574" y="262" width="155" height="54" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
   <text x="651.5" y="284" font-size="12" text-anchor="middle" fill="#1e40af">4. Re-check</text>
